@@ -2,9 +2,9 @@ const express = require('express')
 // npm install --save lodash 
 const _ = require('lodash')
 const router = express.Router()
-const { User } = require('../models/User')
-const { authenticateUser } = require('../middlewares/authentication')
-const { authorizeUser } = require('../middlewares/authorization')
+const { User } = require('../Models/User')
+const { authenticateUser } = require('../middlewares/Authenticate')
+const { authorizeUser } = require('../middlewares/Authorize')
 
 // admin route
 router.get('/', authenticateUser, authorizeUser, function(req, res){
